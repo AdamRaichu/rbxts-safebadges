@@ -5,7 +5,7 @@ interface SafeBadges {
 		player: Player,
 		badgeIds: Array<number>,
 	) => { [badgeId: number]: Array<boolean | string> };
-	SetFastFlag: (this: void, FastFlag: keyof SafeBadgesFastFlags, value: number | boolean) => void;
+	SetFastFlag: <K extends keyof SafeBadgesFastFlags>(this: void, FastFlag: K, value: SafeBadgesFastFlags[K]) => void;
 }
 
 interface SafeBadgesFastFlags {
